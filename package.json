@@ -36,11 +36,7 @@
     "classlist.js": "1.1.20150312",
     "codemirror": "5.42.0",
     "core-js": "2.5.4",
-<<<<<<< HEAD
     "crypto-js": "^4.0.0",
-    "easy-pie-chart": "2.1.7",
-=======
->>>>>>> 6739a62527e87b57e9dc42d3188892bf3d1061f6
     "enhanced-resolve": "3.3.0",
     "flot": "themicon/flot",
     "ika.jvectormap": "themicon/ika.jvectormap",
