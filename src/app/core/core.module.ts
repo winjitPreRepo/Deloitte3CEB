@@ -6,15 +6,28 @@ import { TranslatorService } from './translator/translator.service';
 import { MenuService } from './menu/menu.service';
 
 import { throwIfAlreadyLoaded } from './module-import-guard';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpClient } from '@angular/common/http';
+import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
+import { HttpService } from './http/http.service';
 
 @NgModule({
     imports: [
+        HttpClientModule
     ],
     providers: [
         SettingsService,
         ThemesService,
         TranslatorService,
-        MenuService
+        MenuService,
+        {
+            provide: HttpClient,
+            useClass: HttpService
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorHandlerInterceptor,
+            multi: true
+        }
     ],
     declarations: [
     ],
